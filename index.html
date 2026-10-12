@@ -3,53 +3,51 @@
   ============================================================================
   RICHARD DIAS — BIO SITE (link da bio do Instagram)
   ============================================================================
-  Hub pessoal compacto baseado em cards, na identidade visual do CRESBI
-  Analyzer (ink/petrol/paper). Sem seções gigantes, sem hero de tela cheia —
-  pensado para ser escaneado em poucos segundos no celular.
+  Hub pessoal compacto baseado em cards, com foco na AgilizeWeb e na
+  identidade visual dela (ink/verde/paper). Sem seções gigantes, sem hero de
+  tela cheia — pensado para ser escaneado em poucos segundos no celular.
 
-  ORDEM: perfil (nome + monograma/foto) → cards (Analyzer, Consultoria,
-  Conteúdos, Materiais, CRESBI, Falar comigo) → Sobre → Redes → Footer.
+  ORDEM: perfil (nome + monograma/foto) → cards (AgilizeWeb, Auditoria
+  grátis, Portfólio, CRESBI Analyzer, Falar comigo) → Sobre → Redes → Footer.
 
   O QUE EDITAR ANTES DE PUBLICAR:
-    1. CONFIG no <script> no final do arquivo. WhatsApp, e-mail, Instagram
-       e o link do Analyzer já são reais. Faltam LinkedIn e o link
-       institucional da CRESBI — estão como "#" e marcados com // TODO;
-       enquanto isso o card/ícone fica com opacidade reduzida e não faz
-       nada ao clicar (de propósito, para não parecer um link quebrado).
+    1. CONFIG no <script> no final do arquivo. WhatsApp, e-mail, Instagram,
+       AgilizeWeb e o link do Analyzer já são reais. Falta o LinkedIn — está
+       como "#" e marcado com // TODO; enquanto isso o ícone fica com
+       opacidade reduzida e não faz nada ao clicar (de propósito, para não
+       parecer um link quebrado). Se a AgilizeWeb ganhar domínio próprio,
+       troque a URL do GitHub Pages em CONFIG.agilizeweb.
     2. Foto: veja o comentário "FOTO (opcional)" dentro do bloco de perfil.
        Sem foto, um monograma "RD" aparece no lugar — o layout funciona
        igualmente bem dos dois jeitos.
-    3. Card "MATERIAIS & E-BOOKS" está propositalmente sem link (produto
-       ainda não existe) — mostra "EM BREVE". Quando houver destino real,
-       transforme a div.secondary-card.is-soon em <a> com data-link e
-       adicione a chave em CONFIG.
+    3. Card "em breve" (sem destino real): use a div.secondary-card.is-soon
+       com <span class="soon-badge">EM BREVE</span> no lugar da seta.
     4. Novo card no futuro (cursos, templates, newsletter etc.): copie um
        bloco <a class="secondary-card"> dentro de #cards e adicione a
        chave correspondente em CONFIG. Todo card secundário usa a mesma
        classe "secondary-card" — não crie variações de layout.
   ============================================================================
--->
-<html lang="pt-BR">
+--><html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Richard Dias | Dados, Estratégia e Negócios</title>
-<meta name="description" content="Dados, estratégia, inteligência comercial e negócios. Conheça os conteúdos, projetos e soluções desenvolvidos por Richard Dias e pela CRESBI.">
-<meta name="theme-color" content="#0B1726">
+<title>Richard Dias | AgilizeWeb</title>
+<meta name="description" content="Richard Dias, fundador da AgilizeWeb. Perfil do Google, site e cardápio digital para o seu negócio ser encontrado e escolhido.">
+<meta name="theme-color" content="#06100D">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Richard Dias | Dados, Estratégia e Negócios">
-<meta property="og:description" content="Uso dados para entender negócios, investigar problemas e tomar decisões melhores. Fundador da CRESBI.">
+<meta property="og:title" content="Richard Dias | AgilizeWeb">
+<meta property="og:description" content="Ajudo negócios a serem encontrados no Google e escolhidos pelo cliente. Fundador da AgilizeWeb.">
 <style>
   :root{
-    --ink:#0B1726;
-    --petrol:#155E63;
-    --cobalt:#315B8A;
-    --mist:#DCE5E8;
-    --line:#C4D1D5;
-    --paper:#F7F9FA;
+    --ink:#06100D;
+    --accent:#087F55;
+    --accent-bright:#2EE59D;
+    --mist:#E3EAE6;
+    --line:#CFDAD4;
+    --paper:#F7FAF8;
     --white:#FFFFFF;
-    --muted:#5B6C74;
+    --muted:#5E6E67;
     --font-display:Bahnschrift,"Roboto Condensed","Arial Narrow","Segoe UI",sans-serif;
     --font-body:"Segoe UI",Inter,Arial,sans-serif;
     --max-w:520px;
@@ -74,8 +72,8 @@
 
   .section-code{
     display:inline-block;margin-bottom:12px;padding-top:8px;
-    border-top:2px solid var(--petrol);
-    color:var(--petrol);font:700 .64rem/1.2 var(--font-display);
+    border-top:2px solid var(--accent);
+    color:var(--accent);font:700 .64rem/1.2 var(--font-display);
     letter-spacing:.14em;text-transform:uppercase;
   }
 
@@ -83,20 +81,20 @@
   .profile{padding-block:34px 22px;text-align:center;}
   .avatar{
     width:72px;height:72px;margin:0 auto 16px;border-radius:50%;
-    background:var(--ink);border:2px solid var(--petrol);
+    background:var(--ink);border:2px solid var(--accent);
     display:grid;place-items:center;color:var(--white);
     font:700 1.05rem/1 var(--font-display);letter-spacing:.03em;
     overflow:hidden;
   }
   .profile h1{font-size:clamp(1.55rem,7vw,2rem);line-height:1.05;margin-bottom:8px;}
-  .role{margin-bottom:12px;color:var(--petrol);font:700 .7rem/1 var(--font-display);letter-spacing:.13em;}
-  .profile .lead{max-width:320px;margin-inline:auto;font-size:.92rem;line-height:1.5;color:#33464E;}
+  .role{margin-bottom:12px;color:var(--accent);font:700 .7rem/1 var(--font-display);letter-spacing:.13em;}
+  .profile .lead{max-width:320px;margin-inline:auto;font-size:.92rem;line-height:1.5;color:#31423B;}
   .founder-tag{
     display:inline-flex;align-items:center;gap:6px;margin-top:16px;
     padding:7px 13px;border:1px solid var(--line);background:var(--white);
     color:var(--muted);font-size:.72rem;font-weight:600;
   }
-  .founder-tag b{color:var(--petrol);}
+  .founder-tag b{color:var(--accent);}
 
   .divider{height:1px;background:var(--line);margin-block:0 22px;}
 
@@ -106,18 +104,18 @@
   /* nível 1 — destaque máximo */
   .card-feature{
     position:relative;display:block;padding:24px 22px;
-    background:var(--ink);border-left:6px solid var(--petrol);color:var(--white);
+    background:var(--ink);border-left:6px solid var(--accent);color:var(--white);
     transition:border-color var(--tr),transform var(--tr);
   }
-  .card-feature:hover{border-left-color:#1E8B90;transform:translateY(-1px);}
+  .card-feature:hover{border-left-color:var(--accent-bright);transform:translateY(-1px);}
   .card-feature .card-code{position:absolute;top:16px;right:18px;color:rgba(255,255,255,.32);font:700 .66rem/1 var(--font-display);}
-  .card-feature .card-tag{display:block;margin-bottom:10px;color:#8FC4C5;font:700 .62rem/1 var(--font-display);letter-spacing:.14em;}
+  .card-feature .card-tag{display:block;margin-bottom:10px;color:#7FD9B2;font:700 .62rem/1 var(--font-display);letter-spacing:.14em;}
   .card-feature h2{font-size:clamp(1.35rem,5vw,1.6rem);color:var(--white);margin-bottom:8px;}
-  .card-feature p{max-width:300px;color:#C7D6D6;font-size:.86rem;line-height:1.5;}
+  .card-feature p{max-width:300px;color:#C4D6CD;font-size:.86rem;line-height:1.5;}
   .card-feature .card-cta{
     display:inline-flex;align-items:center;gap:7px;margin-top:16px;
     color:var(--white);font:700 .7rem/1 var(--font-display);letter-spacing:.06em;
-    padding-bottom:3px;border-bottom:2px solid var(--petrol);transition:gap var(--tr);
+    padding-bottom:3px;border-bottom:2px solid var(--accent);transition:gap var(--tr);
   }
   .card-feature:hover .card-cta{gap:11px;}
   .card-feature .card-cta svg{width:13px;height:13px;}
@@ -125,38 +123,38 @@
   /* nível 2 — ofertas comerciais */
   /*
     Cards secundários — componente único e compartilhado.
-    Consultoria é a referência visual: todo card secundário (Conteúdos,
-    Materiais & E-books, CRESBI, Falar comigo) usa exatamente esta classe.
+    Auditoria é a referência visual: todo card secundário (Portfólio,
+    CRESBI Analyzer, Falar comigo) usa exatamente esta classe.
     Só mudam ícone, título, descrição e destino do link — nunca a estrutura.
   */
   .secondary-card{
     position:relative;display:flex;align-items:flex-start;gap:14px;
     min-height:72px;padding:17px;background:var(--white);
-    border:1px solid var(--line);border-left:4px solid var(--petrol);
+    border:1px solid var(--line);border-left:4px solid var(--accent);
     transition:border-color var(--tr),transform var(--tr);
   }
-  a.secondary-card:hover{border-color:var(--petrol);transform:translateY(-1px);}
+  a.secondary-card:hover{border-color:var(--accent);transform:translateY(-1px);}
   .secondary-card .card-icon{
     flex:0 0 auto;width:38px;height:38px;display:grid;place-items:center;
-    background:#EAF1F1;color:var(--petrol);
+    background:#E6F3EC;color:var(--accent);
   }
   .secondary-card .card-icon svg{width:19px;height:19px;}
   .secondary-card .card-body{flex:1 1 auto;min-width:0;}
   .secondary-card h3{font-size:.98rem;margin-bottom:4px;color:var(--ink);}
   .secondary-card p{font-size:.8rem;line-height:1.45;color:var(--muted);}
-  .secondary-card .card-arrow{flex:0 0 auto;align-self:center;width:16px;height:16px;color:var(--petrol);transition:transform var(--tr);}
+  .secondary-card .card-arrow{flex:0 0 auto;align-self:center;width:16px;height:16px;color:var(--accent);transition:transform var(--tr);}
   a.secondary-card:hover .card-arrow{transform:translateX(3px);}
 
-  /* modificador: ainda sem destino real (ex.: Materiais & E-books) */
+  /* modificador: ainda sem destino real (card "EM BREVE") */
   .secondary-card.is-soon{cursor:default;}
   .soon-badge{
     flex:0 0 auto;align-self:center;padding:5px 9px;border:1px solid var(--line);
     color:var(--muted);font:700 .58rem/1 var(--font-display);letter-spacing:.08em;white-space:nowrap;
   }
 
-  /* modificador: link ainda não configurado (ex.: CRESBI institucional) */
+  /* modificador: link ainda não configurado (ex.: LinkedIn) */
   .secondary-card.is-todo{opacity:.5;cursor:not-allowed;}
-  .secondary-card.is-todo:hover{border-color:var(--petrol);transform:none;}
+  .secondary-card.is-todo:hover{border-color:var(--accent);transform:none;}
 
   @media (max-width:380px){
     /* espaço curto: o badge "EM BREVE" desce para uma segunda linha em vez
@@ -168,7 +166,7 @@
 
   /* ---------- SOBRE ---------- */
   .about{padding-block:26px 4px;}
-  .about p.about-text{max-width:480px;font-size:.88rem;line-height:1.6;color:#33464E;}
+  .about p.about-text{max-width:480px;font-size:.88rem;line-height:1.6;color:#31423B;}
 
   /* ---------- REDES ---------- */
   .socials{padding-block:22px 4px;}
@@ -179,17 +177,17 @@
     transition:border-color var(--tr),color var(--tr);
   }
   .social-row a svg{width:18px;height:18px;}
-  .social-row a:hover{border-color:var(--petrol);color:var(--petrol);}
+  .social-row a:hover{border-color:var(--accent);color:var(--accent);}
   .social-row a.is-todo{opacity:.4;cursor:not-allowed;}
   .social-row a.is-todo:hover{border-color:var(--line);color:var(--ink);}
 
   /* ---------- FOOTER ---------- */
   .footer{margin-top:30px;padding-block:28px 24px;text-align:center;background:var(--ink);color:var(--white);}
   .footer-name{font:700 .92rem/1 var(--font-display);letter-spacing:.08em;}
-  .footer-role{margin-top:7px;color:#8FC4C5;font:700 .6rem/1 var(--font-display);letter-spacing:.13em;}
-  .footer-loop{margin-top:14px;color:#7F929A;font:700 .58rem/1 var(--font-display);letter-spacing:.15em;}
-  .footer-meta{margin-top:13px;color:#66787F;font-size:.68rem;}
-  .footer-cresbi{color:#8FC4C5;font-weight:700;}
+  .footer-role{margin-top:7px;color:#7FD9B2;font:700 .6rem/1 var(--font-display);letter-spacing:.13em;}
+  .footer-loop{margin-top:14px;color:#7D9188;font:700 .58rem/1 var(--font-display);letter-spacing:.15em;}
+  .footer-meta{margin-top:13px;color:#64766E;font-size:.68rem;}
+  .footer-brand{color:#7FD9B2;font-weight:700;}
 
   /* ---------- ANIMAÇÃO DE ENTRADA ---------- */
   .reveal{opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;}
@@ -224,9 +222,9 @@
            Sem foto, o monograma "RD" abaixo cobre esse espaço perfeitamente. -->
       <div class="avatar" aria-hidden="true">RD</div>
       <h1>RICHARD DIAS</h1>
-      <p class="role">DADOS · ESTRATÉGIA · NEGÓCIOS</p>
-      <p class="lead">Uso dados para entender negócios, investigar problemas e tomar decisões melhores.</p>
-      <span class="founder-tag">Fundador da <b>CRESBI</b></span>
+      <p class="role">PRESENÇA DIGITAL · GOOGLE · NEGÓCIOS</p>
+      <p class="lead">Ajudo negócios a serem encontrados no Google e escolhidos pelo cliente.</p>
+      <span class="founder-tag">Fundador da <b>AgilizeWeb</b></span>
     </section>
 
     <div class="divider" role="separator"></div>
@@ -234,73 +232,61 @@
     <!-- ======================= CARDS ======================= -->
     <section id="cards" class="cards">
 
-      <!-- 01 — CRESBI ANALYZER (nível 1) -->
-      <a class="card-feature reveal" data-link="analyzer" href="#" target="_blank" rel="noopener">
+      <!-- 01 — AGILIZEWEB (nível 1) -->
+      <a class="card-feature reveal" data-link="agilizeweb" href="#" target="_blank" rel="noopener">
         <span class="card-code">01</span>
-        <span class="card-tag">INTELIGÊNCIA COMERCIAL</span>
-        <h2>CRESBI ANALYZER</h2>
-        <p>Descubra o que seus dados comerciais estão tentando mostrar.</p>
+        <span class="card-tag">PRESENÇA DIGITAL PARA NEGÓCIOS</span>
+        <h2>AGILIZEWEB</h2>
+        <p>Seu negócio encontrado e escolhido. Perfil do Google, site e cardápio digital, a partir de R$ 79,90.</p>
         <span class="card-cta">CONHECER
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
 
-      <!-- 02 — CONSULTORIA (nível 2) -->
-      <a class="secondary-card reveal" data-link="consultoria" href="#" target="_blank" rel="noopener">
+      <!-- 02 — AUDITORIA GRÁTIS (nível 2) -->
+      <a class="secondary-card reveal" data-link="auditoria" href="#" target="_blank" rel="noopener">
         <span class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.6"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
         </span>
         <span class="card-body">
-          <h3>CONSULTORIA</h3>
-          <p>Análise, estratégia e inteligência para problemas reais de negócio.</p>
+          <h3>AUDITORIA GRÁTIS</h3>
+          <p>Análise do seu Perfil do Google e do que falta para o cliente achar você.</p>
         </span>
         <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 03 — CONTEÚDOS (nível 3) -->
-      <a class="secondary-card reveal" href="#redes">
+      <!-- 03 — PORTFÓLIO (nível 2) -->
+      <a class="secondary-card reveal" data-link="portfolio" href="#" target="_blank" rel="noopener">
         <span class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.3" y="4.3" width="17.4" height="15.4" rx="1.6"/><path d="M7 9h10M7 13h10M7 17h6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.3" y="4.3" width="17.4" height="15.4" rx="1.6"/><path d="M3.3 8.6h17.4"/><circle cx="6" cy="6.5" r=".3" fill="currentColor"/><circle cx="8" cy="6.5" r=".3" fill="currentColor"/></svg>
         </span>
         <span class="card-body">
-          <h3>CONTEÚDOS</h3>
-          <p>Dados, estratégia, inteligência comercial e negócios.</p>
+          <h3>PORTFÓLIO</h3>
+          <p>Negócios que já estão no ar com a AgilizeWeb.</p>
         </span>
         <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 04 — MATERIAIS & E-BOOKS (nível 2, sem link — produto ainda não existe) -->
-      <div class="secondary-card is-soon reveal" aria-disabled="true">
+      <!-- 04 — CRESBI ANALYZER (nível 3) -->
+      <a class="secondary-card reveal" data-link="analyzer" href="#" target="_blank" rel="noopener">
         <span class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.3c2-1 5.3-1 8 0v14c-2.7-1-6-1-8 0Z"/><path d="M20 5.3c-2-1-5.3-1-8 0"/><path d="M12 5.3v14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M7 16v-4M12 16V8M17 16v-7"/></svg>
         </span>
         <span class="card-body">
-          <h3>MATERIAIS &amp; E-BOOKS</h3>
-          <p>Guias, análises e materiais práticos para decisões melhores.</p>
-        </span>
-        <span class="soon-badge">EM BREVE</span>
-      </div>
-
-      <!-- 05 — CRESBI (nível 3) -->
-      <a class="secondary-card reveal" data-link="cresbi" href="#" target="_blank" rel="noopener">
-        <span class="card-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.3" width="10" height="17.4"/><path d="M14 9.3h6v11.4h-6"/><path d="M7 7h4M7 10.3h4M7 13.6h4M7 16.9h4"/></svg>
-        </span>
-        <span class="card-body">
-          <h3>CRESBI</h3>
-          <p>Inteligência para decisões melhores.</p>
+          <h3>CRESBI ANALYZER</h3>
+          <p>Descubra o que seus dados comerciais estão tentando mostrar.</p>
         </span>
         <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 06 — FALAR COMIGO (nível 3) -->
+      <!-- 05 — FALAR COMIGO (nível 3) -->
       <a class="secondary-card reveal" data-link="whatsapp" href="#" target="_blank" rel="noopener">
         <span class="card-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 17.5 4 20l2.6-2.4A8 8 0 1 1 9.6 19Z"/><path d="M9.2 9.6c.3 2.6 2.4 4.7 5 5"/></svg>
         </span>
         <span class="card-body">
           <h3>FALAR COMIGO</h3>
-          <p>Projetos, negócios e parcerias.</p>
+          <p>Orçamentos, projetos e parcerias.</p>
         </span>
         <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -313,7 +299,7 @@
     <!-- ======================= SOBRE ======================= -->
     <section class="about reveal">
       <p class="section-code">SOBRE</p>
-      <p class="about-text">Trabalho na interseção entre dados, estratégia e negócios. Gosto de investigar operações, encontrar padrões e transformar informação em decisões mais claras.</p>
+      <p class="about-text">Fundei a AgilizeWeb para colocar negócios no mapa: cuidamos do Perfil do Google, do site e do cardápio digital para o cliente encontrar você e chamar no WhatsApp. Também desenvolvo o CRESBI Analyzer, para quem quer entender melhor os próprios dados comerciais.</p>
     </section>
 
     <!-- ======================= REDES ======================= -->
@@ -338,21 +324,23 @@
 
   <footer class="footer">
     <p class="footer-name">RICHARD DIAS</p>
-    <p class="footer-role">DADOS · ESTRATÉGIA · NEGÓCIOS</p>
-    <p class="footer-loop">ANALISAR · ENTENDER · CRESCER</p>
-    <p class="footer-meta">© <span id="year"></span> · <span class="footer-cresbi">CRESBI</span></p>
+    <p class="footer-role">PRESENÇA DIGITAL · GOOGLE · NEGÓCIOS</p>
+    <p class="footer-loop">ENCONTRADO · ESCOLHIDO · CHAMADO</p>
+    <p class="footer-meta">© <span id="year"></span> · <span class="footer-brand">AgilizeWeb</span></p>
   </footer>
 </div>
 
 <script>
   /* ==========================================================================
-     CONFIGURAÇÃO — troque os links aqui. WhatsApp, e-mail, Instagram e o
-     link do Analyzer já são reais. LinkedIn e o link institucional da
-     CRESBI estão como "#" até serem preenchidos — enquanto isso, o
-     card/ícone fica com opacidade reduzida e não faz nada ao clicar
-     (ver lógica de "is-todo" abaixo).
+     CONFIGURAÇÃO — troque os links aqui. WhatsApp, e-mail, Instagram,
+     AgilizeWeb e o link do Analyzer já são reais. O LinkedIn está como "#"
+     até ser preenchido — enquanto isso, o ícone fica com opacidade reduzida
+     e não faz nada ao clicar (ver lógica de "is-todo" abaixo).
      ========================================================================== */
-  const WHATSAPP_NUMBER = "5511932317374"; // mesmo número já usado no site oficial do Analyzer
+  const WHATSAPP_NUMBER = "5511932317374"; // mesmo número usado no site da AgilizeWeb e do Analyzer
+
+  // TODO: trocar pelo domínio próprio da AgilizeWeb quando houver
+  const AGILIZEWEB_URL = "https://richarddias131-cloud.github.io/agilizeweb-site/";
 
   function waLink(message) {
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
@@ -360,12 +348,13 @@
 
   const CONFIG = {
     whatsapp: waLink("Olá, Richard! Vim do seu perfil e gostaria de conversar."),
-    consultoria: waLink("Olá, Richard! Tenho interesse em entender como funciona a consultoria."),
+    auditoria: waLink("Olá! Quero a auditoria grátis do meu Perfil do Google."),
+    agilizeweb: AGILIZEWEB_URL,
+    portfolio: AGILIZEWEB_URL + "#portfolio",
     email: "contato@cresbi.com.br",
-    instagram: "https://instagram.com/cresbi.oficial",
+    instagram: "https://instagram.com/agilizeweb",
     linkedin: "#", // TODO: inserir URL real do LinkedIn
     analyzer: "https://cresbi.com.br",
-    cresbi: "#",   // TODO: inserir URL real de uma página institucional da CRESBI
   };
 
   document.querySelectorAll("[data-link]").forEach((el) => {
