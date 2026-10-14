@@ -285,16 +285,15 @@
   }
 </style>
 <script>
-  /* Abertura (igual ao cresbi.com.br): toca só na primeira visita da sessão,
-     não aparece com redução de movimento e pode ser pulada com clique,
+  /* Abertura (igual ao cresbi.com.br): toca a cada visita (o bio é uma
+     página só, aberta de passagem pelo Instagram), não aparece com redução
+     de movimento e pode ser pulada com clique,
      toque ou tecla. Enquanto toca, <html data-intro="play"> atrasa a entrada
      do perfil (--intro-delay). */
   (function () {
-    var d = document.documentElement, visto = null;
-    try { visto = sessionStorage.getItem("rd-bio-intro"); } catch (e) {}
-    if (visto || matchMedia("(prefers-reduced-motion: reduce)").matches) { d.setAttribute("data-intro", "skip"); return; }
+    var d = document.documentElement;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { d.setAttribute("data-intro", "skip"); return; }
     d.setAttribute("data-intro", "play");
-    try { sessionStorage.setItem("rd-bio-intro", "1"); } catch (e) {}
     function fim() { if (d.getAttribute("data-intro") === "play") d.setAttribute("data-intro", "done"); }
     document.addEventListener("DOMContentLoaded", function () {
       var el = document.getElementById("intro");
